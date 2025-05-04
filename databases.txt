@@ -1,0 +1,14 @@
++------------+       +-----------+         +---------+            +-----------+          +-------------+
+|  Users     |       | Projects  |         |  Tasks  |            | Comments  |          | TimeTracking|
++------------+       +-----------+         +---------+            +-----------+          +-------------+
+| user_id PK |<----+ | project_id PK |  +->| task_id PK    |<----+| comment_id PK|        | time_id PK |
+| name       |       | name          | |   | title         |      | text         |        | hours_spent|
+| email      |       | description   | |   | description   |      | timestamp    |        | date_logged|
+| password   |       | begin_date    | |   | priority      |      | user_id FK   |        | task_id FK |
+| role       |       | deadline      | |   | status        |      +---------------+       | user_id FK |
+| status     |       | created_by FK | |   | begin_date    |                                 |
++------------+       +---------------+ |   | end_date      |                                 |
+                                       |   | created_by FK |                                 |
+                                       |   | assigned_to FK|                                 |
+                                       |   +--------------+                                  |
+                                       +-----------------------------------------------------+
