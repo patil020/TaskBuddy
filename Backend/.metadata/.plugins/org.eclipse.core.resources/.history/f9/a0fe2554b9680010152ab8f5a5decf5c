@@ -1,0 +1,52 @@
+package com.sunbeam.entites;
+
+import java.time.LocalDate;
+
+import com.sunbeam.entities.enums.ProjectStatus;
+import com.sunbeam.entities.enums.UserRole;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "projects")
+public class Project extends BaseEntity {
+
+    @Column(length = 200, nullable = false)
+    private String title;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id", nullable = false)
+    private User owner;
+
+    @Column(name = "start_date")
+    private LocalDate startDate;
+
+    @Column(name = "due_date")
+    private LocalDate dueDate;
+
+    private Integer duration;
+
+    @Enumerated(EnumType.STRING)
+    private ProjectStatus status;
+
+    // Relations omitted for brevity
+
+    // Getters and setters
+    // ...
+}

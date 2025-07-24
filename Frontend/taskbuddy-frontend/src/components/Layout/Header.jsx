@@ -1,21 +1,12 @@
+// src/components/Layout/Header.jsx
 import React from 'react';
-import { Navbar, Container, Button } from 'react-bootstrap';
+import { Navbar, Container } from 'react-bootstrap';
 
-const Header = ({ title, actionButton }) => {
+const Header = ({ title }) => {
   return (
-    <Navbar bg="white" className="border-bottom shadow-sm">
+    <Navbar bg="light" className="shadow-sm mb-3">
       <Container fluid>
-        <Navbar.Brand className="text-dark fw-bold fs-4">
-          {title}
-        </Navbar.Brand>
-        {actionButton && (
-          <Button 
-            variant={actionButton.variant || 'primary'} 
-            onClick={actionButton.onClick}
-          >
-            {actionButton.text}
-          </Button>
-        )}
+        <Navbar.Brand className="fw-bold fs-4">{title}</Navbar.Brand>
       </Container>
     </Navbar>
   );

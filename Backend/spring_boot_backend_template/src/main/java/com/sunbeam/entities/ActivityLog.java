@@ -1,0 +1,42 @@
+package com.sunbeam.entities;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.EqualsAndHashCode;
+
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
+@Entity
+@Table(name = "activity_logs")
+public class ActivityLog extends BaseEntity {
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    @ToString.Exclude
+    private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "project_id")
+    @ToString.Exclude
+    private Project project;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "task_id")
+    @ToString.Exclude
+    private Task task;
+
+    @Column(length = 100, nullable = false)
+    private String action;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+}

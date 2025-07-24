@@ -1,0 +1,5 @@
+package com.sunbeam.entites.enums;
+
+public enum UserRole {
+
+}

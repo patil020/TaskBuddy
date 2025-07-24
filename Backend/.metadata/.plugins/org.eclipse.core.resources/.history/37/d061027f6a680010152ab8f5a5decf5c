@@ -1,0 +1,6 @@
+package com.sunbeam.entites;
+
+public class BaseEntity {
+	
+
+}

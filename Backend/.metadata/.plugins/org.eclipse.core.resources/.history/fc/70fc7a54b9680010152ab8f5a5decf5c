@@ -1,0 +1,7 @@
+package com.sunbeam.entites.enums;
+
+public enum ProjectStatus {
+    ACTIVE,
+    COMPLETED,
+    ARCHIVED
+}
