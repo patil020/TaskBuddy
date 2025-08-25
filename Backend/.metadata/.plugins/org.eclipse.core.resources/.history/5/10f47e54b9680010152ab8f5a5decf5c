@@ -1,6 +1,0 @@
-package com.sunbeam.entites.enums;
-
-public enum UserRole {
-	TEAM_MEMBER,
-    TEAM_LEAD
-}
